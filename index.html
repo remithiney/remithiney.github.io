@@ -32,17 +32,33 @@
 <body>
 
 <div id="menu">
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_BarplotSpecByRating.html" data-text="This graph illustrates the distribution of specializations by server and rating bracket in 3v3 in Europe. The data is categorized to show how different specializations are spread across various servers and their corresponding rating brackets. This visualization helps to understand the popularity and performance of each specialization within the European region, providing insights into competitive trends and player preferences in 3v3 matches.">Spec Per Server</div>
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_ClassDistrib.html" data-text="This graph illustrates the overall distribution of specializations and classes in 3v3 in Europe. It provides a comprehensive view of how different classes and their specializations are represented in the 3v3 competitive scene across the European region. This visualization aids in understanding the relative popularity and prevalence of each class and specialization, offering insights into the metagame and player preferences in European 3v3 matches.">Class Distrib</div>
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_ClassRaceDistrib.html" data-text="This graph illustrates the overall distribution of races by class in 3v3 in Europe. It provides a detailed view of how different races are represented within each class in the 3v3 competitive scene across the European region. This visualization helps to understand the popularity and choice of races within each class, offering insights into player preferences and racial trends in European 3v3 matches.">Race/Class Distrib</div>
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_ClassSpecMedian.html" data-text="This graph illustrates the distribution of specializations based on the median rating in 3v3 in Europe. It provides an overall view of how different specializations are represented according to their median ratings in the 3v3 competitive scene across the European region. This visualization helps to understand the performance and popularity of each specialization, offering insights into player success and specialization trends in European 3v3 matches.">Spec Median</div>
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_DistribRating.html" data-text="This graph illustrates the distribution of overall ratings in 3v3 in Europe. It provides a comprehensive view of how players' ratings are spread across the 3v3 competitive scene in the European region. This visualization helps to understand the range and frequency of different rating levels, offering insights into player performance and the competitive landscape of 3v3 matches in Europe.">Rating Distrib</div>
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_RaceDistrib.html" data-text="This graph illustrates the overall distribution of races in 3v3 in Europe. It provides a comprehensive view of how different races are represented in the 3v3 competitive scene across the European region. This visualization helps to understand the popularity and prevalence of each race, offering insights into player preferences and racial trends in European 3v3 matches.">Race Distrib</div>
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_TreemapClassSpecDistrib.html" data-text="This graph illustrates the overall distribution of classes by specialization in terms of volume in 3v3 in Europe. It provides a detailed view of how different specializations are represented within each class in the 3v3 competitive scene across the European region. This visualization helps to understand the popularity and prevalence of each specialization within the classes, offering insights into player preferences and class trends in European 3v3 matches.">Treemap Spec</div>
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_ViolinClassSpecRating.html" data-text="This violin plot illustrates the ratings for each specialization in 3v3 in Europe. It provides a comprehensive view of the distribution of ratings within each specialization, highlighting the range, density, and overall performance in the 3v3 competitive scene across the European region. This visualization helps to understand the variability and success of each specialization, offering insights into player performance and specialization trends in European 3v3 matches.">Violin Spec Rating</div>
-    <div class="menu-item" data-page="real/leaderboards_EU_3v3_ScaterPlotWinLoss.html" data-text="This scatter plot represents the relationship between the number of wins and the number of losses for various players in a competition. The data comes from a European 3v3 leaderboard, and each point on the graph represents a player.">Scatter Win/Loss</div>
+    <!-- Existing menu items -->
+    <div class="menu-item" data-page="plots/leaderboards_EU_3V3_ClassDistrib.html" data-text="For on-going Season 9 (Cata) - EU - 3v3. Double click legend items to isolate.">Class Distrib</div>
+    <div class="menu-item" data-page="plots/leaderboards_EU_3V3_ClassRaceDistrib.html" data-text="For on-going Season 9 (Cata) - EU - 3v3. Double click legend items to isolate.">Race/Class Distrib</div>
+    <div class="menu-item" data-page="plots/leaderboards_EU_3V3_ClassSpecMedian.html" data-text="For on-going Season 9 (Cata) - EU - 3v3. Double click legend items to isolate.">Spec Median</div>
+    <div class="menu-item" data-page="plots/leaderboards_EU_3V3_DistribRating.html" data-text="For on-going Season 9 (Cata) - EU - 3v3. ">Rating Distrib</div>
+    <div class="menu-item" data-page="plots/leaderboards_EU_3V3_RaceDistrib.html" data-text="For on-going Season 9 (Cata) - EU - 3v3. Clic to enlarge.">Race Distrib</div>
+    <div class="menu-item" data-page="plots/leaderboards_EU_3V3_TreemapClassSpecDistrib.html" data-text="For on-going Season 9 (Cata) - EU - 3v3.">Treemap Spec</div>
+    <div class="menu-item" data-page="plots/leaderboards_EU_3V3_ViolinClassSpecRating.html" data-text="For on-going Season 9 (Cata) - EU - 3v3.">Violin Spec Rating</div>
+    <div class="menu-item" data-page="plots/leaderboards_EU_3V3_performance_analysis_report.html" data-text="For on-going Season 9 (Cata) - EU - 3v3.">Analysis S9</div>
     
-    <div class="menu-item" data-page="real/leaderboards_EU_3V3_performance_analysis_report.html" data-text="">Analysis</div>
+    <!-- New dropdown menus for Season and Bracket -->
+    <label for="season">Season:</label>
+    <select name="season" id="season">
+        <option value="S5">S5</option>
+        <option value="S6">S6</option>
+        <option value="S7">S7</option>
+        <option value="S8">S8</option>
+        <option value="S9">S9</option>
+    </select>
+    <label for="bracket">Bracket:</label>
+    <select name="bracket" id="bracket">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="rbg">rbg</option>
+    </select>
+    <button type="button" onclick="loadPlot()">View Plot</button>
 </div>
 
 <div id="content">
@@ -93,6 +109,16 @@
                 document.head.appendChild(newScript).parentNode.removeChild(newScript);
             });
         }
+
+        // Load the plot based on the dropdowns
+        window.loadPlot = function () {
+            const season = document.getElementById('season').value;
+            const bracket = document.getElementById('bracket').value;
+            const plotFile = `plots/${season}_${bracket}_WinLoss.html`;
+            const additionalText = `Displaying plot for Season ${season} and Bracket ${bracket}`;
+
+            loadPage(plotFile, additionalText);
+        };
     });
 </script>
 
